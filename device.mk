@@ -19,6 +19,9 @@ PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 # Relaxed artifact requirements (mirror AOSP GSI)
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += device/peter/gsi
+
 # Optional setupwizard
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.mode=OPTIONAL
