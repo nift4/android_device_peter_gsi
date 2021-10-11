@@ -1,0 +1,5 @@
+service init_gsi /system/system_ext/bin/init_gsi
+    class core
+    user root
+    group root
+    seclabel u:r:init:s0

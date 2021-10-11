@@ -1,0 +1,7 @@
+cc_binary {
+    name: "init_gsi",
+    system_ext_specific: true,
+    srcs: ["init_gsi.cpp"],
+    shared_libs: ["libbase", "libdl", "libutils"],
+    init_rc: ["init_gsi.rc"],
+}

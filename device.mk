@@ -29,3 +29,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Resetprop
 PRODUCT_PACKAGES += \
     resetprop_sys
+
+# Init
+PRODUCT_PACKAGES += \
+    init_gsi
+
