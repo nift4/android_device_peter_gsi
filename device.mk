@@ -22,6 +22,9 @@ PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += device/peter/gsi
 
+# Overlay
+PRODUCT_PACKAGE_OVERLAYS += device/peter/gsi/overlay
+
 # Optional setupwizard
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.mode=OPTIONAL
