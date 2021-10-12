@@ -45,8 +45,9 @@ int main() {
         override_ro_prop("ro.product", source, "name", name);
         override_ro_prop("ro.product", source, "brand", brand);
         override_ro_prop("ro.product", source, "manufacturer", manufacturer);
-        override_ro_prop("ro", source, "build.fingerprint", fingerprint);
     }
+    
+    override_ro_prop("ro", "", "build.stock_fingerprint", fingerprint);
     
     return 0;
 }
