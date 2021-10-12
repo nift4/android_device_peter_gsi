@@ -26,10 +26,6 @@ PRODUCT_SOONG_NAMESPACES += device/peter/gsi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.mode=OPTIONAL
 
-# Resetprop
-PRODUCT_PACKAGES += \
-    resetprop_sys
-
 # Init
 PRODUCT_PACKAGES += \
     init_gsi

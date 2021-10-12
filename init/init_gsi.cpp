@@ -4,20 +4,11 @@
 #include <string>
 #include <iostream>
 
-#include <sys/wait.h>
-
 using namespace android;
 using namespace std;
 
-template<typename... Args>
-void fork_execl(Args... args) {
-    int pid, status;
-    if ((pid = fork()) == 0) {
-        execl(args..., nullptr);
-    } else {
-        waitpid(pid, &status, 0);
-    }
-}
+// From libresetprop
+extern int setprop(const char *name, const char *value, bool trigger);
 
 void override_ro_prop(string prefix, string source, string postfix, string value) {
     if (value.length() == 0) return;
@@ -33,7 +24,7 @@ void override_ro_prop(string prefix, string source, string postfix, string value
     std::cout << prop << std::endl;
     std::cout << value << std::endl;
     
-    fork_execl("/system/system_ext/bin/resetprop_sys", "resetprop_sys", prop.c_str(), value.c_str());
+    setprop(prop.c_str(), value.c_str(), true);
 }
 
 std::string RO_PROP_SOURCES[] = {

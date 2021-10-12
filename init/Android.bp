@@ -3,5 +3,12 @@ cc_binary {
     system_ext_specific: true,
     srcs: ["init_gsi.cpp"],
     shared_libs: ["libbase", "libdl", "libutils"],
+    static_libs: ["libresetprop"],
     init_rc: ["init_gsi.rc"],
+    target: {
+        android: {
+            ldflags: ["-Wl,--rpath,/system/${LIB}/bootstrap"],
+        },
+    },
+    bootstrap: true,
 }
