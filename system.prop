@@ -1,3 +1,4 @@
+# Force disable apexd so we don't run into loop direct I/O issues
 ro.apex.updatable=false
 # Optional setupwizard
 ro.setupwizard.mode=OPTIONAL
