@@ -2,3 +2,6 @@
 ro.apex.updatable=false
 # Optional setupwizard
 ro.setupwizard.mode=OPTIONAL
+# Force USB FFS AIO compat
+sys.usb.ffs.aio_compat=true
+persist.adb.nonblocking_ffs=false
