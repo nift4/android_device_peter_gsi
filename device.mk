@@ -25,6 +25,9 @@ PRODUCT_SOONG_NAMESPACES += device/peter/gsi
 # Overlay
 PRODUCT_PACKAGE_OVERLAYS += device/peter/gsi/overlay
 
+# Device-specific overlays from phhusson
+include vendor/hardware_overlay/overlay.mk
+
 # Optional setupwizard
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.mode=OPTIONAL
