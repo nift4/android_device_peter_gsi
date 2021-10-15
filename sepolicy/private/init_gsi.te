@@ -1,0 +1,7 @@
+type init_gsi, domain, coredomain;
+type init_gsi_exec, system_file_type, exec_type, file_type;
+
+init_daemon_domain(init_gsi);
+
+# TODO: Address denials and remove this
+permissive init_gsi;

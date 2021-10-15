@@ -1,2 +1,2 @@
 on post-fs
-    exec u:r:init:s0 -- /system_ext/bin/init_gsi
+    exec -- /system_ext/bin/init_gsi
