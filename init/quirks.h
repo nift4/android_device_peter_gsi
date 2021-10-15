@@ -1,5 +1,8 @@
 #pragma once
 #include <filesystem>
+#include <fstream>
+#include <functional>
+#include <iostream>
 #include <string>
 
 #include <sys/wait.h>
@@ -28,5 +31,6 @@ namespace Quirks {
     void Add(DeviceQuirk* quirk);
     void Run();
     
+    void OverrideFileWith(filesystem::path p, function<void(istream&, ostream&)> proc);
     void OverrideFileReplaceSubstr(filesystem::path p, string pattern, string replacement);
 }
