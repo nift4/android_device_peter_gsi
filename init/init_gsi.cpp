@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 
+#include "quirks.h"
+
 using namespace android;
 using namespace std;
 
@@ -31,7 +33,7 @@ std::string RO_PROP_SOURCES[] = {
     "", "product", "odm", "vendor", "system_ext", "system", "bootimage",
 };
 
-int main() {
+void handle_device_model_props() {
     string device = base::GetProperty("ro.product.vendor.device", "");
     string model = base::GetProperty("ro.product.vendor.model", "");
     string name = base::GetProperty("ro.product.vendor.name", "");
@@ -48,6 +50,10 @@ int main() {
     }
     
     override_ro_prop("ro", "", "build.stock_fingerprint", fingerprint);
-    
+}
+
+int main() {
+    handle_device_model_props();
+    Quirks::Run();
     return 0;
 }
