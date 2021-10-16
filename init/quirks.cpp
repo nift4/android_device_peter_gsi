@@ -3,6 +3,8 @@
 
 #include "quirks.h"
 
+#include <regex>
+#include <sstream>
 #include <vector>
 
 #include <sys/mount.h>
@@ -105,7 +107,8 @@ void Quirks::OverrideFileWith(filesystem::path p, function<void(istream&, ostrea
 }
 
 void Quirks::OverrideFileReplaceSubstr(filesystem::path p, string pattern, string replacement) {
-    Quirks::OverrideFileWith(p, [](istream& is, ostream& os) {
-        os << is.rdbuf();
+    Quirks::OverrideFileWith(p, [pattern, replacement](istream& is, ostream& os) {
+        string str = string((istreambuf_iterator<char>(is)), istreambuf_iterator<char>());
+        os << regex_replace(str, regex(pattern), replacement);;
     });
 }

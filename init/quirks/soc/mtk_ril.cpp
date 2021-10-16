@@ -29,7 +29,7 @@ public:
     void Run() {
         for (auto& p : PATHS) {
             if (filesystem::exists(p)) {
-                Quirks::OverrideFileReplaceSubstr(p, "AT+EAIC=2", "AT+EAIC=3");
+                Quirks::OverrideFileReplaceSubstr(p, "AT\\+EAIC=2", "AT+EAIC=3");
             }
         }
     }
