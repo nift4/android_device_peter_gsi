@@ -22,8 +22,9 @@ void fork_execl(Args... args) {
 
 class DeviceQuirk {
 public:
-    virtual bool ShouldRun();
-    virtual void Run();
+    DeviceQuirk();
+    virtual bool ShouldRun() = 0;
+    virtual void Run() = 0;
     virtual ~DeviceQuirk();
 };
 

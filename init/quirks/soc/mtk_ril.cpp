@@ -13,10 +13,6 @@ const string PATHS[] = {
 
 class MtkRilQuirk : DeviceQuirk {
 public:
-    MtkRilQuirk() {
-        Quirks::Add(this);
-    }
-    
     bool ShouldRun() {
         for (auto& p : PATHS) {
             if (filesystem::exists(p)) {

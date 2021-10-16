@@ -11,6 +11,11 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+// Default constructor to add self to the loaded list of quirks
+DeviceQuirk::DeviceQuirk() {
+    Quirks::Add(this);
+}
+
 // Default destructor for DeviceQuirk
 DeviceQuirk::~DeviceQuirk() {
     
