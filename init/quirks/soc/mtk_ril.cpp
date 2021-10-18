@@ -31,4 +31,4 @@ public:
     }
 };
 
-static MtkRilQuirk* _ignored = new MtkRilQuirk();
+LOAD_QUIRK(MtkRilQuirk);

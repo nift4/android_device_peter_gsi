@@ -33,6 +33,9 @@ public:
     virtual ~DeviceQuirk();
 };
 
+#define LOAD_QUIRK(NAME) \
+    static NAME _ignored;
+
 namespace Quirks {
     void Add(DeviceQuirk* quirk);
     void Run();

@@ -22,4 +22,4 @@ public:
     }
 };
 
-static UnihertzKeylayoutQuirk* _ignored = new UnihertzKeylayoutQuirk();
+LOAD_QUIRK(UnihertzKeylayoutQuirk);
