@@ -9,8 +9,7 @@ using namespace std;
 class UnihertzKeylayoutQuirk : DeviceQuirk {
 public:
     bool ShouldRun() {
-        return android::base::GetProperty("ro.vendor.build.fingerprint", "")
-                .rfind("Unihertz/", 0) == 0;
+        return FP_STARTS_WITH("Unihertz/");
     }
     
     void Run() {

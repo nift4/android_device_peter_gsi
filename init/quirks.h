@@ -8,6 +8,11 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+#define PROP_STARTS_WITH(prop, prefix) \
+    (android::base::GetProperty(prop, "").rfind(prefix, 0) == 0)
+#define FP_STARTS_WITH(prefix) \
+    PROP_STARTS_WITH("ro.vendor.build.fingerprint", prefix)
+
 using namespace std;
 
 template<typename... Args>
