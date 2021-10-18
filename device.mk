@@ -32,3 +32,5 @@ include vendor/hardware_overlay/overlay.mk
 PRODUCT_PACKAGES += \
     init_gsi
 
+# Quirks
+include device/peter/gsi/quirks/quirks.mk

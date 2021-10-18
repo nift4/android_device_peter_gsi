@@ -1,1 +1,2 @@
 /system/system_ext/bin/init_gsi        u:object_r:init_gsi_exec:s0
+/system/system_ext/quirks(/.*)?        u:object_r:system_file:s0

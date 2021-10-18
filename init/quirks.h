@@ -34,4 +34,8 @@ namespace Quirks {
     
     void OverrideFileWith(filesystem::path p, function<void(istream&, ostream&)> proc);
     void OverrideFileReplaceSubstr(filesystem::path p, string pattern, string replacement);
+    
+    void OverrideFolderWith(filesystem::path p, function<void(filesystem::path)> proc);
+    
+    void CopyFileKeepPerms(filesystem::path src, filesystem::path dst);
 }

@@ -7,6 +7,9 @@ cc_binary {
         
         // SoC-specific quirks
         "quirks/soc/mtk_ril.cpp",
+        
+        // Device-specific quirks
+        "quirks/device/unihertz_keylayout.cpp",
     ],
     shared_libs: ["libbase", "libdl", "liblog", "libutils"],
     static_libs: ["libresetprop", "libc++fs"],
