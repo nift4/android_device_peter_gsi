@@ -5,3 +5,8 @@ ro.setupwizard.mode=OPTIONAL
 # Force USB FFS AIO compat
 sys.usb.ffs.aio_compat=true
 persist.adb.nonblocking_ffs=false
+# Enable VoLTE options unconditionally
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+persist.dbg.allow_ims_off=1
