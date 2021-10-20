@@ -17,3 +17,6 @@ TARGET_SYSTEM_EXT_PROP := build/make/target/board/gsi_system_ext.prop
 else
 TARGET_SYSTEM_EXT_PROP := build/make/target/board/gsi_system_ext_user.prop
 endif
+
+# GMS build
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
