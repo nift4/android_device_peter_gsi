@@ -34,3 +34,9 @@ PRODUCT_PACKAGES += \
 
 # Quirks
 include device/peter/gsi/quirks/quirks.mk
+
+# Enable ro.adb.secure on userdebug and user
+ifeq (,$(filter eng,$(TARGET_BUILD_VARIANT)))
+    PRODUCT_SYSTEM_EXT_PROPERTIES += \
+        ro.adb.secure=1
+endif
