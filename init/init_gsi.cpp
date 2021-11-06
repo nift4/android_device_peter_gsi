@@ -41,6 +41,7 @@ void handle_device_model_props() {
     string manufacturer = base::GetProperty("ro.product.vendor.manufacturer", "");
     string fingerprint = base::GetProperty("ro.vendor.build.fingerprint", "");
     string spl = base::GetProperty("ro.vendor.build.security_patch", "");
+    string spl_orig = base::GetProperty("ro.build.version.security_patch", "");
     
     for (const auto& source : RO_PROP_SOURCES) {
         override_ro_prop("ro.product", source, "device", device);
@@ -54,6 +55,7 @@ void handle_device_model_props() {
     override_ro_prop("ro", "", "build.flavor", name + "-user");
     override_ro_prop("ro", "", "build.tags", "release-keys");
     override_ro_prop("ro", "", "build.version.security_patch", spl);
+    override_ro_prop("ro", "", "build.version.real_security_patch", spl_orig);
 }
 
 int main() {
