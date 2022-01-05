@@ -10,6 +10,7 @@ cc_binary {
         
         // Device-specific quirks
         "quirks/device/unihertz_keylayout.cpp",
+        "quirks/device/ulefone_power_armor_13.cpp",
     ],
     shared_libs: ["libbase", "libdl", "liblog", "libutils"],
     static_libs: ["libresetprop", "libc++fs"],
