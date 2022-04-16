@@ -13,6 +13,9 @@ $(call inherit-product, device/generic/common/gsi_product.mk)
 # Special settings for GSI releasing
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
 
+# This is whitelisted by product name -- unset it
+PRODUCT_INSTALL_DEBUG_POLICY_TO_SYSTEM_EXT :=
+
 # Enable dynamically-sized images
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 
