@@ -38,6 +38,11 @@ PRODUCT_PACKAGES += \
 # Quirks
 include device/peter/gsi/quirks/quirks.mk
 
+# Euicc -- enabled by default, won't work without eSIM slot definition anyway
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
+
+
 # Enable ro.adb.secure on userdebug and user
 ifeq (,$(filter eng,$(TARGET_BUILD_VARIANT)))
     PRODUCT_SYSTEM_EXT_PROPERTIES += \
