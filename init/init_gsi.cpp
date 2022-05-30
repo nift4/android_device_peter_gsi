@@ -58,8 +58,13 @@ void handle_device_model_props() {
     override_ro_prop("ro", "", "build.version.real_security_patch", spl_orig);
 }
 
-int main() {
-    handle_device_model_props();
-    Quirks::Run();
+int main(int argc, char **argv) {
+    if (argc >= 2 && strcmp(argv[1], "--late-init") == 0) {
+        // Reset SPL / device model related props during late init
+        // so that they are set before keystore / vold is started.
+        handle_device_model_props();
+    } else {
+        Quirks::Run();
+    }
     return 0;
 }

@@ -1,2 +1,5 @@
+on late-init
+    exec u:r:init_gsi:s0 root -- /system_ext/bin/init_gsi --late-init
+
 on post-fs
     exec u:r:init_gsi:s0 root -- /system_ext/bin/init_gsi
