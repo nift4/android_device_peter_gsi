@@ -87,6 +87,16 @@ void Quirks::CopyFileKeepPerms(filesystem::path src, filesystem::path dst) {
     RestoreFilePermissions(src, dst);
 }
 
+int Quirks::OverrideWithBindMount(filesystem::path src, filesystem::path dst) {
+    int err = mount(src.c_str(), dst.c_str(), nullptr, MS_BIND, nullptr);
+
+    if (err < 0) {
+        ALOGE("bind mount %s on %s err = %d\n", src.c_str(), dst.c_str(), errno);
+    }
+
+    return err;
+}
+
 void Quirks::OverrideFileWith(filesystem::path p, function<void(istream&, ostream&)> proc) {
     if (!filesystem::is_regular_file(p)) return;
     
@@ -108,10 +118,9 @@ void Quirks::OverrideFileWith(filesystem::path p, function<void(istream&, ostrea
     RestoreFilePermissions(p, tmp_path);
     
     // Bind mount and override the file
-    int err = mount(tmp_path.c_str(), p.c_str(), nullptr, MS_BIND, nullptr);
-    
+    int err = OverrideWithBindMount(tmp_path, p);
+
     if (err < 0) {
-        ALOGE("bind mount %s on %s err = %d\n", tmp_path.c_str(), p.c_str(), errno);
         return;
     }
     
@@ -149,10 +158,9 @@ void Quirks::OverrideFolderWith(filesystem::path p, function<void(filesystem::pa
     
     proc(tmp_path);
     
-    int err = mount(tmp_path.c_str(), p.c_str(), nullptr, MS_BIND, nullptr);
+    int err = OverrideWithBindMount(tmp_path, p);
     
     if (err < 0) {
-        ALOGE("bind mount %s on %s err = %d\n", tmp_path.c_str(), p.c_str(), errno);
         return;
     }
     

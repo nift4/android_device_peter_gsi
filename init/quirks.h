@@ -39,7 +39,9 @@ public:
 namespace Quirks {
     void Add(DeviceQuirk* quirk);
     void Run();
-    
+
+    int OverrideWithBindMount(filesystem::path src, filesystem::path dst);
+
     void OverrideFileWith(filesystem::path p, function<void(istream&, ostream&)> proc);
     void OverrideFileReplaceSubstr(filesystem::path p, string pattern, string replacement);
     
