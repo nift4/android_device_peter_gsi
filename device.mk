@@ -42,6 +42,9 @@ include device/peter/gsi/quirks/quirks.mk
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
 
+# vendor/foss
+PRODUCT_PACKAGES += \
+    UnifiedNlp
 
 # Enable ro.adb.secure on userdebug and user
 ifeq (,$(filter eng,$(TARGET_BUILD_VARIANT)))
