@@ -1,0 +1,5 @@
+type vendor_qmipriod, domain;
+type vendor_qmipriod_data_file, file_type, data_file_type;
+
+r_dir_file(vendor_qmipriod, vendor_qmipriod_data_file);
+allow vendor_qmipriod vendor_qmipriod_data_file:file w_file_perms;
