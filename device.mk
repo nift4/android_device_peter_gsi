@@ -19,9 +19,6 @@ PRODUCT_INSTALL_DEBUG_POLICY_TO_SYSTEM_EXT :=
 # Enable dynamically-sized images
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 
-# Relaxed artifact requirements (mirror AOSP GSI)
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += device/peter/gsi
 
