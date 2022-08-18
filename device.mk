@@ -49,6 +49,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     UnifiedNlp
 
+# ThemePicker (for Launcher3)
+PRODUCT_PACKAGES += \
+    ThemePicker
+
 # Enable ro.adb.secure on userdebug and user
 ifeq (,$(filter eng,$(TARGET_BUILD_VARIANT)))
     PRODUCT_SYSTEM_EXT_PROPERTIES += \
