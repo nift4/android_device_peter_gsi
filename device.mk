@@ -23,7 +23,9 @@ PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 PRODUCT_SOONG_NAMESPACES += device/peter/gsi
 
 # Overlay
-PRODUCT_PACKAGE_OVERLAYS += device/peter/gsi/overlay
+PRODUCT_PACKAGES += \
+    GsiFrameworkResTarget \
+    GsiLauncher3Target
 
 # Device-specific overlays from phhusson
 include vendor/hardware_overlay/overlay.mk
@@ -46,8 +48,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     UnifiedNlp
 
-# ThemePicker (for Launcher3)
+# Launcher3
 PRODUCT_PACKAGES += \
+    Launcher3QuickStep \
     ThemePicker
 
 # Enable ro.adb.secure on userdebug and user
