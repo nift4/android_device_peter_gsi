@@ -49,7 +49,7 @@ void handle_device_model_props() {
         override_ro_prop("ro.product", source, "manufacturer", manufacturer);
     }
     
-    override_ro_prop("ro", "", "build.stock_fingerprint", fingerprint);
+    override_ro_prop("ro", "", "build.fingerprint", fingerprint);
     override_ro_prop("ro", "", "build.flavor", name + "-user");
     override_ro_prop("ro", "", "build.tags", "release-keys");
 }
