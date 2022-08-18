@@ -21,6 +21,8 @@
     <bool name="config_intrusiveNotificationLed">true</bool>
     
     <bool name="config_useRoundIcon">true</bool>
+    <!-- Round icon by default -->
+    <string name="config_icon_mask" translatable="false">"M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0"</string>
     
     <string name="config_wallpaperCropperPackage">com.android.wallpaperpicker</string>
     <bool name="config_unplugTurnsOnScreen">true</bool>
