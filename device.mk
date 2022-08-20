@@ -45,8 +45,7 @@ PRODUCT_PACKAGES += \
     OpenEUICC
 
 # vendor/foss
-PRODUCT_PACKAGES += \
-    UnifiedNlp
+include vendor/foss/apps.mk
 
 # Launcher3
 PRODUCT_PACKAGES += \
