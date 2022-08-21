@@ -45,7 +45,7 @@ PRODUCT_PACKAGES += \
     OpenEUICC
 
 # vendor/foss
-include vendor/foss/apps.mk
+include vendor/foss/foss.mk
 
 # Launcher3
 PRODUCT_PACKAGES += \
