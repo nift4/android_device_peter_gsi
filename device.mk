@@ -22,6 +22,10 @@ PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += device/peter/gsi
 
+# Reuiqred for system-side HALs like sysbta
+# TODO: Can we work around this?
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # Overlay
 PRODUCT_PACKAGES += \
     GsiFrameworkResTarget \
@@ -51,6 +55,15 @@ include vendor/foss/foss.mk
 PRODUCT_PACKAGES += \
     Launcher3QuickStep \
     ThemePicker
+
+# Bluetooth Audio (System-side HAL, sysbta)
+PRODUCT_PACKAGES += \
+    audio.sysbta.default \
+    android.hardware.bluetooth.audio-service-system
+
+PRODUCT_COPY_FILES += \
+    device/peter/gsi/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
+    device/peter/gsi/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUTY_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
 
 # Enable ro.adb.secure on userdebug and user
 ifeq (,$(filter eng,$(TARGET_BUILD_VARIANT)))

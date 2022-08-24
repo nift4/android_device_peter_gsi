@@ -1,7 +1,7 @@
 DEVICE_PATH := device/peter/gsi
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
 # Props
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
