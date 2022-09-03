@@ -56,6 +56,10 @@ PRODUCT_PACKAGES += \
     Launcher3QuickStep \
     ThemePicker
 
+# Calculator from Lineage (packages/apps/ExactCalculator)
+PRODUCT_PACKAGES += \
+    ExactCalculator
+
 # Bluetooth Audio (System-side HAL, sysbta)
 PRODUCT_PACKAGES += \
     audio.sysbta.default \
