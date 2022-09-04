@@ -4,5 +4,9 @@ on late-init
 on post-fs
     exec u:r:init_gsi:s0 root -- /system_ext/bin/init_gsi
 
+# When we call our post-fs-data actions, we would like persist properties to be available
+on load_persist_props_action
+    exec u:r:init_gsi:s0 root -- /system_ext/bin/init_gsi --post-fs-data
+
 on property:persist.sys.gsi.hw.mainkeys=*
     setprop qemu.hw.mainkeys ${persist.sys.gsi.hw.mainkeys}

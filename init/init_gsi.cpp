@@ -59,6 +59,8 @@ int main(int argc, char **argv) {
         // Reset SPL / device model related props during late init
         // so that they are set before keystore / vold is started.
         handle_device_model_props();
+    } else if (argc >= 2 && strcmp(argv[1], "--post-fs-data") == 0) {
+        Quirks::RunPostData();
     } else {
         Quirks::Run();
     }

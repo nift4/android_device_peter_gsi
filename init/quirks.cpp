@@ -40,6 +40,16 @@ void Quirks::Run() {
     }
 }
 
+void Quirks::RunPostData() {
+    if (quirks == nullptr) return;
+    
+    for (DeviceQuirk* quirk : *quirks) {
+        if (quirk->ShouldRun()) {
+            quirk->RunPostData();
+        }
+    }
+}
+
 // Utility functions for use with quirks
 #define QUIRKS_TMP_BASE_PATH "/mnt/quirks"
 #define QUIRKS_TMP_FILES_PATH QUIRKS_TMP_BASE_PATH "/files"

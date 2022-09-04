@@ -29,7 +29,8 @@ class DeviceQuirk {
 public:
     DeviceQuirk();
     virtual bool ShouldRun() = 0;
-    virtual void Run() = 0;
+    virtual void Run() {}
+    virtual void RunPostData() {}
     virtual ~DeviceQuirk();
 };
 
@@ -39,6 +40,7 @@ public:
 namespace Quirks {
     void Add(DeviceQuirk* quirk);
     void Run();
+    void RunPostData();
 
     int OverrideWithBindMount(filesystem::path src, filesystem::path dst);
 
