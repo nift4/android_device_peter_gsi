@@ -1,0 +1,12 @@
+cc_binary {
+    name: "aguiledbeltctl",
+    system_ext_specific: true,
+    srcs: [
+        "aguiledbeltctl.cpp",
+    ],
+    shared_libs: [
+        "vendor.mediatek.hardware.aguiledbelt@1.0",
+        "libutils",
+        "libhidlbase",
+    ],
+}

@@ -78,3 +78,7 @@ ifeq (,$(filter eng,$(TARGET_BUILD_VARIANT)))
     PRODUCT_SYSTEM_EXT_PROPERTIES += \
         ro.adb.secure=1
 endif
+
+# Custom commands
+PRODUCT_PACKAGES += \
+    aguiledbeltctl
