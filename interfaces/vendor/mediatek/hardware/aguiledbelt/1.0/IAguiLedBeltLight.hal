@@ -1,0 +1,14 @@
+package vendor.mediatek.hardware.aguiledbelt@1.0;
+
+import vendor.mediatek.hardware.aguiledbelt@1.0::ILedBeltLightCallback;
+
+interface IAguiLedBeltLight {
+    setLedBeltLightMusicState(uint32_t lightId, uint32_t color, uint32_t brightness, bool isRandom);
+    setLedBeltLightAtomphereState(uint32_t lightId, uint32_t color, uint32_t brightness);
+    setLedBeltLightState(uint32_t type, uint32_t color, uint32_t brightness);
+    setLedBeltBrightnessState(uint32_t lightId, uint32_t color, uint32_t brightness, bool isRandom);
+    setLedBeltPatternSettingsState(uint32_t lightId, uint32_t color, uint32_t brightness, bool isRandom);
+    setLedBeltAlwaysOnState(uint32_t lightId, uint32_t color, uint32_t brightness, bool isRandom);
+    setCallback(ILedBeltLightCallback callback);
+    setLedBeltChargingState(uint32_t lightId, uint32_t color);
+};

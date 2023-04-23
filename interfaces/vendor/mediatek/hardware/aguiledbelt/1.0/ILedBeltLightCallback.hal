@@ -1,0 +1,5 @@
+package vendor.mediatek.hardware.aguiledbelt@1.0;
+
+interface ILedBeltLightCallback {
+    onStateChanged(uint32_t id, uint32_t state);
+};

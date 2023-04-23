@@ -1,0 +1,15 @@
+package vendor.mediatek.hardware.aguiledbelt@1.0;
+
+enum LedBeltType: uint8_t {
+    BATTERY = 0x64,
+    WLR_BATTERY = 0x65,
+    NOTIFICATIONS = 0x66,
+    CALL = 0x67,
+    LIGHT_ID_VOICE_ASSISTANT = 0x68,
+    MUSIC = 0x6b,
+    LIGHT_ID_FLIP = 0x6c,
+    BRIGHTNESS = 0x6e,
+    ATMOSPHERE = 0x6f,
+    PATTERN_SETTINGS = 0x70,
+    ALWAYS_ON = 0x71,
+};
