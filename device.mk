@@ -48,6 +48,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     OpenEUICC
 
+# Telecom API (Phone Accounts, etc.)
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.telecom.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.telecom.xml
+
 # vendor/foss
 include vendor/foss/foss.mk
 
