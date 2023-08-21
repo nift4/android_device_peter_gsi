@@ -16,7 +16,8 @@ public:
         Quirks::OverrideFolderWith("/system/usr/keylayout", [](auto p) {
             Quirks::CopyFileKeepPerms("/system/system_ext/quirks/keylayout/unihertz-fingerprint_key.kl", p / "fingerprint_key.kl");
             Quirks::CopyFileKeepPerms("/system/system_ext/quirks/keylayout/unihertz-mtk-tpd.kl", p / "mtk-tpd.kl");
-            Quirks::CopyFileKeepPerms("/system/system_ext/quirks/keylayout/unihertz-mtk-tpd-kpd.kl", p / "mtk-tpd-kpd.kl");
+            Quirks::CopyFileKeepPerms("/system/system_ext/quirks/keylayout/unihertz-mtk-tpd.kl", p / "mtk-tpd-kpd.kl");
+            Quirks::CopyFileKeepPerms("/system/system_ext/quirks/keylayout/unihertz-mtk-tpd.kl", p / "cap_touch.kl");
             Quirks::CopyFileKeepPerms("/system/system_ext/quirks/keylayout/unihertz-mtk-kpd.kl", p / "mtk-kpd.kl");
         });
     }
