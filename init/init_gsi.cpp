@@ -9,9 +9,6 @@
 using namespace android;
 using namespace std;
 
-// From libresetprop
-extern int setprop(const char *name, const char *value, bool trigger);
-
 void override_ro_prop(string prefix, string source, string postfix, string value) {
     if (value.length() == 0) return;
     

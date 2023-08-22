@@ -3,6 +3,7 @@
 
 #include "quirks.h"
 
+#include <cstdarg>
 #include <regex>
 #include <sstream>
 #include <vector>
@@ -10,6 +11,19 @@
 #include <sys/mount.h>
 #include <sys/stat.h>
 #include <unistd.h>
+
+// Utility function used with preset properties
+void __set_props(int _ignore, ...) {
+    va_list args;
+    va_start(args, _ignore);
+
+    while (auto key = va_arg(args, const char*)) {
+        auto val = va_arg(args, const char*);
+        setprop(key, val, true);
+    }
+
+    va_end(args);
+}
 
 // Default constructor to add self to the loaded list of quirks
 DeviceQuirk::DeviceQuirk() {

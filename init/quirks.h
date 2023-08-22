@@ -8,6 +8,9 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+// From libresetprop
+extern int setprop(const char *name, const char *value, bool trigger);
+
 #define PROP_STARTS_WITH(prop, prefix) \
     (android::base::GetProperty(prop, "").rfind(prefix, 0) == 0)
 #define FP_STARTS_WITH(prefix) \
@@ -36,6 +39,20 @@ public:
 
 #define LOAD_QUIRK(NAME) \
     static NAME _ignored;
+
+void __set_props(int _ignore, ...);
+
+#define CONCAT_(x,y) x##y
+#define CONCAT(x,y) CONCAT_(x,y)
+#define UNIQUE_NAME CONCAT(_unique_name_, __LINE__) 
+
+#define PRESET_PROPS(cond, ...) \
+    class UNIQUE_NAME: DeviceQuirk { \
+        public: \
+            bool ShouldRun() { return cond; } \
+            void Run() { __set_props(0, __VA_ARGS__, NULL); } \
+    }; \
+    static UNIQUE_NAME CONCAT(_ignored, UNIQUE_NAME);
 
 namespace Quirks {
     void Add(DeviceQuirk* quirk);

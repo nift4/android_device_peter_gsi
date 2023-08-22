@@ -4,6 +4,9 @@ cc_binary {
     srcs: [
         "init_gsi.cpp",
         "quirks.cpp",
+
+        // Per-device / SoC preset properties
+        "quirks/preset_props.cpp",
         
         // SoC-specific quirks
         "quirks/soc/mtk_ril.cpp",
@@ -12,7 +15,6 @@ cc_binary {
         
         // Device-specific quirks
         "quirks/device/unihertz_keylayout.cpp",
-        "quirks/device/ulefone_power_armor_13.cpp",
     ],
     shared_libs: ["libbase", "libdl", "liblog", "libutils"],
     static_libs: ["libresetprop", "libc++fs"],
