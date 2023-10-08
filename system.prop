@@ -13,7 +13,7 @@ persist.dbg.allow_ims_off=1
 # Enable hw keys by default (unless overridden by user)
 persist.sys.gsi.hw.mainkeys=0
 # Enable system-side generic bluetooth audio HAL
-persist.bluetooth.system_audio_hal.enabled=1
+persist.bluetooth.system_audio_hal.enabled=true
 # Set commonly-supported Bluetooth profiles to enabled
 # TODO: Enable BLE Audio profiles on newer vendors
 bluetooth.profile.asha.central.enabled?=true
