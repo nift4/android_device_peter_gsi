@@ -13,3 +13,9 @@ PRESET_PROPS(
     FP_STARTS_WITH("Redmi/gauguin"),
     "ro.telephony.default_network", "33,22"
 );
+
+// Qualcomm: No stereo VoIP
+PRESET_PROPS(
+    PROP_STARTS_WITH("ro.boot.hardware", "qcom"),
+    "persist.sys.phh.disable_stereo_voip", "true"
+);
