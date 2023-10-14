@@ -58,7 +58,8 @@ include vendor/foss/foss.mk
 # Launcher3
 PRODUCT_PACKAGES += \
     Launcher3QuickStep \
-    ThemePicker
+    ThemePicker \
+    ThemesStub
 
 # Calculator from Lineage (packages/apps/ExactCalculator)
 PRODUCT_PACKAGES += \
