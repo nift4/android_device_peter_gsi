@@ -1,7 +1,9 @@
 # Access to fake keymaster SPL/Android version props -- from TrebleDroid
 get_prop(hal_keymaster, default_prop);
+get_prop(hal_keymint, default_prop);
 get_prop(tee, default_prop);
 
 get_prop(hal_keymaster, system_prop);
+get_prop(hal_keymint, system_prop);
 
 get_prop(hal_gatekeeper, system_prop);

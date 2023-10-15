@@ -9,6 +9,7 @@
 
 #include <cstdlib>
 #include <filesystem>
+#include <map>
 #include <optional>
 #include <string>
 #include <utility>
@@ -17,6 +18,11 @@ using namespace std;
 
 #define AVB_PROP_OS_VERSION "com.android.build.boot.os_version"
 #define AVB_PROP_SPL "com.android.build.boot.security_patch"
+
+map<int, string> api_to_version{
+    {30, "11"}, {31, "12"}, {32, "12L"},
+    {33, "13"}, {34, "14"}
+};
 
 optional<pair<string, string>> try_get_spl() {
     string boot_part = "/dev/block/by-name/boot" + android::base::GetProperty("ro.boot.slot_suffix", "");
@@ -59,12 +65,26 @@ public:
         android::base::SetProperty("ro.keymaster.brn", "Android");
         android::base::SetProperty("ro.keymaster.mod", "AOSP on ARM64");
 
+	string release = android::base::GetProperty("ro.vendor.build.version.release", "11");
+	string spl = android::base::GetProperty("ro.vendor.build.version.security_patch", "2023-01-05");
         auto res = try_get_spl();
 
         if (res) {
-            android::base::SetProperty("ro.keymaster.xxx.release", res->first);
-            android::base::SetProperty("ro.keymaster.xxx.security_patch", res->second);
+            release = res->first;
+            spl = res->second;
         }
+
+        // With GRF, release version from vendor or boot may not be what we need
+        int first_api_level = android::base::GetIntProperty("ro.product.first_api_level", 30);
+        if (api_to_version.count(first_api_level) > 0) {
+            string release_from_first_api = api_to_version[first_api_level];
+            if (stoi(release_from_first_api) >= stoi(release)) {
+                release = release_from_first_api;
+            }
+        }
+
+        android::base::SetProperty("ro.keymaster.xxx.release", release);
+        android::base::SetProperty("ro.keymaster.xxx.security_patch", spl);
 
         android::base::SetProperty("ctl.restart", "teed");
     }
