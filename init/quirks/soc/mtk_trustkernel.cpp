@@ -50,9 +50,7 @@ optional<pair<string, string>> try_get_spl() {
 class MtkTkQuirk : DeviceQuirk {
 public:
     bool ShouldRun() {
-        return filesystem::exists("/proc/tkcore/tkcore_log")
-                 // No longer an issue after MediaTek upgraded to KeyMint AIDL services
-                 && !filesystem::exists("/vendor/bin/hw/android.hardware.security.keymint-service.trustkernel");
+        return filesystem::exists("/proc/tkcore/tkcore_log");
     }
 
     void Run() {
