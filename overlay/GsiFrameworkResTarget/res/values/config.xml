@@ -64,4 +64,8 @@
     <!-- The type of the light sensor to be used by the display framework for things like
          auto-brightness. If unset, then it just gets the default sensor of type TYPE_LIGHT. -->
     <string name="config_displayLightSensorType" translatable="false">android.sensor.light</string>
+
+    <!-- IWLAN data service package name to bind to by default. If none is specified in an overlay,
+         an empty string is passed in -->
+    <string name="config_wlan_data_service_package" translatable="false">com.google.android.iwlan</string>
 </resources>
