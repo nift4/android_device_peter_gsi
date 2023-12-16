@@ -34,11 +34,6 @@
     <bool name="config_smart_battery_available">true</bool>
     <dimen name="config_dialogCornerRadius">8.0dip</dimen>
     <dimen name="config_buttonCornerRadius">4.0dip</dimen>
-    
-    <string-array name="config_biometric_sensors" translatable="false" >
-        <!-- ID0:Fingerprint:Strong -->
-        <item>0:2:15</item>
-    </string-array>
 
     <array name="config_availableColorModes">
         <!-- ColorDisplayManager.COLOR_MODE_NATURAL -->
