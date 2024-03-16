@@ -1,0 +1,4 @@
+# R vendor devices may not have fs_bpf_netd_private etc.
+# Allow network stack to do whatever with fs_bpf
+allow network_stack fs_bpf:dir search;
+allow network_stack fs_bpf:file { getattr read write };
