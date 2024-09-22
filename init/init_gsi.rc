@@ -10,3 +10,16 @@ on load_persist_props_action
 
 on property:persist.sys.gsi.hw.mainkeys=*
     setprop qemu.hw.mainkeys ${persist.sys.gsi.hw.mainkeys}
+
+# Some MTK RIL implementations crash and fail to restart because they aren't associated
+# with the HIDL interface properly.
+# As a workaround, we basically watchdog the ril daemon service here.
+# Note that we shall only bounce the service after it has been started for the first time
+# by vendor code. We use a property to record that.
+on property:init.svc.vendor.ril-daemon-mtk=running
+    setprop init.svc.vendor.ril-daemon-mtk-first-started true
+    setprop init.svc.vendor.ril-daemon-mtk-restarting false
+
+on property:init.svc.zygote=running && property:init.svc.vendor.ril-daemon-mtk-first-started=true && property:init.svc.vendor.ril-daemon-mtk-restarting=false && property:init.svc.vendor.ril-daemon-mtk=stopped
+    setprop init.svc.vendor.ril-daemon-mtk-restarting true
+    exec_background u:r:init_gsi:s0 root -- /system/bin/sh -c "sleep 15 && setprop ctl.start vendor.ril-daemon-mtk"
