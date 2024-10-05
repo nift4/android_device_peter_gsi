@@ -4,7 +4,7 @@
 
 // Disable navbar by default on devices known to have physical keys
 PRESET_PROPS(
-    FP_STARTS_WITH("Unihertz/Jelly") || FP_STARTS_WITH("Unihertz/Atom"),
+    (FP_STARTS_WITH("Unihertz/Jelly") && !FP_STARTS_WITH("Unihertz/Jelly_Max")) || FP_STARTS_WITH("Unihertz/Atom"),
     "persist.sys.gsi.hw.mainkeys", "1"
 );
 
