@@ -68,4 +68,7 @@
     <!-- IWLAN data service package name to bind to by default. If none is specified in an overlay,
          an empty string is passed in -->
     <string name="config_wlan_data_service_package" translatable="false">com.google.android.iwlan</string>
+
+    <!-- Dialer (from vendor/foss) -->
+    <string name="config_defaultDialer">org.fossify.phone</string>
 </resources>
