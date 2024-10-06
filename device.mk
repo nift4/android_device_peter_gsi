@@ -91,3 +91,8 @@ PRODUCT_PACKAGES += \
 # Iwlan (VoWiFi)
 PRODUCT_PACKAGES += \
     Iwlan
+
+# Lineage SensitivePhoneNumbers
+PRODUCT_PACKAGES += \
+    sensitive_pn.xml
+
