@@ -8,6 +8,12 @@ PRESET_PROPS(
     "persist.sys.gsi.hw.mainkeys", "1"
 );
 
+// Unihertz Jelly Max: Broken "fake" gravity sensor. Ignore it to use AOSP's SensorFusion
+PRESET_PROPS(
+    FP_STARTS_WITH("Unihertz/Jelly_Max"),
+    "persist.sys.phh.sensor_filter", "mtk:gravity"
+);
+
 // Some xiaomi devices: Override default network mode to enable 5G
 PRESET_PROPS(
     FP_STARTS_WITH("Redmi/gauguin"),
