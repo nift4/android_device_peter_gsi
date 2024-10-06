@@ -5,6 +5,8 @@ cc_binary {
         "init_gsi.cpp",
         "quirks.cpp",
 
+        "quirks/no_sysbta.cpp",
+
         // Per-device / SoC preset properties
         "quirks/preset_props.cpp",
         
