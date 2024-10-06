@@ -25,3 +25,9 @@ PRESET_PROPS(
     PROP_STARTS_WITH("ro.boot.hardware", "qcom"),
     "persist.sys.phh.disable_stereo_voip", "true"
 );
+
+// MediaTek GED
+PRESET_PROPS(
+    PROP_STARTS_WITH("ro.hardware.hwcomposer", "mtk"),
+    "persist.sys.phh.mtk_ged_kpi", "1"
+);
