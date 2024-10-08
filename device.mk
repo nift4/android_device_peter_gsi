@@ -29,7 +29,8 @@ SELINUX_IGNORE_NEVERALLOWS := true
 # Overlay
 PRODUCT_PACKAGES += \
     GsiFrameworkResTarget \
-    GsiLauncher3Target
+    GsiLauncher3Target \
+    GsiSettingsTarget
 
 # Device-specific overlays from phhusson
 include vendor/hardware_overlay/overlay.mk
