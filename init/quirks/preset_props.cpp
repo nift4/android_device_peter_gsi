@@ -9,9 +9,11 @@ PRESET_PROPS(
 );
 
 // Unihertz Jelly Max: Broken "fake" gravity sensor. Ignore it to use AOSP's SensorFusion
+// Also ignore broken inbuilt vibrator effects
 PRESET_PROPS(
     FP_STARTS_WITH("Unihertz/Jelly_Max"),
-    "persist.sys.phh.sensor_filter", "mtk:gravity"
+    "persist.sys.phh.sensor_filter", "mtk:gravity",
+    "persist.sys.phh.ignore_vibrator_effects", "true"
 );
 
 // Some xiaomi devices: Override default network mode to enable 5G
