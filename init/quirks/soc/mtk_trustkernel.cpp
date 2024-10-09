@@ -21,7 +21,7 @@ using namespace std;
 
 map<int, string> api_to_version{
     {30, "11"}, {31, "12"}, {32, "12L"},
-    {33, "13"}, {34, "14"}
+    {33, "13"}, {34, "14"}, {35, "15"},
 };
 
 optional<pair<string, string>> try_get_spl() {
@@ -65,8 +65,8 @@ public:
         android::base::SetProperty("ro.keymaster.brn", "Android");
         android::base::SetProperty("ro.keymaster.mod", "AOSP on ARM64");
 
-	string release = android::base::GetProperty("ro.vendor.build.version.release", "11");
-	string spl = android::base::GetProperty("ro.vendor.build.version.security_patch", "2023-01-05");
+        string release = android::base::GetProperty("ro.vendor.build.version.release", "11");
+        string spl = android::base::GetProperty("ro.vendor.build.version.security_patch", "2023-01-05");
         auto res = try_get_spl();
 
         if (res) {
