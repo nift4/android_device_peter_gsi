@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/peter_gsi_arm64.mk
+    $(LOCAL_DIR)/lineage_peter_gsi_arm64.mk

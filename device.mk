@@ -56,16 +56,6 @@ PRODUCT_COPY_FILES += \
 # vendor/foss
 include vendor/foss/foss.mk
 
-# Launcher3
-PRODUCT_PACKAGES += \
-    Launcher3QuickStep \
-    ThemePicker \
-    ThemesStub
-
-# Calculator from Lineage (packages/apps/ExactCalculator)
-PRODUCT_PACKAGES += \
-    ExactCalculator
-
 # Bluetooth Audio (System-side HAL, sysbta)
 PRODUCT_PACKAGES += \
     audio.sysbta.default \
@@ -74,10 +64,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/peter/gsi/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
     device/peter/gsi/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
-
-# QcRilAm service for QCOM in-call audio (packages/apps/QcRilAm)
-PRODUCT_PACKAGES += \
-    QcRilAm
 
 # Enable ro.adb.secure on userdebug and user
 ifeq (,$(filter eng,$(TARGET_BUILD_VARIANT)))
@@ -92,8 +78,4 @@ PRODUCT_PACKAGES += \
 # Iwlan (VoWiFi)
 PRODUCT_PACKAGES += \
     Iwlan
-
-# Lineage SensitivePhoneNumbers
-PRODUCT_PACKAGES += \
-    sensitive_pn.xml
 
