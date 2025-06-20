@@ -8,12 +8,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk)
 
 
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/lmodroid/config/common_full_phone.mk)
 
 # Common device config
 $(call inherit-product, device/peter/gsi/device.mk)
 
-PRODUCT_NAME := lineage_peter_gsi_arm64
-PRODUCT_DEVICE := lineage_peter_gsi_arm64
+PRODUCT_NAME := lmodroid_peter_gsi_arm64
+PRODUCT_DEVICE := lmodroid_peter_gsi_arm64
 PRODUCT_BRAND := Unihertz
 PRODUCT_MODEL := Jelly Max
