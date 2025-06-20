@@ -73,7 +73,8 @@ endif
 
 # Custom commands
 PRODUCT_PACKAGES += \
-    aguiledbeltctl
+    aguiledbeltctl \
+    aguiauxcam
 
 # Iwlan (VoWiFi)
 PRODUCT_PACKAGES += \

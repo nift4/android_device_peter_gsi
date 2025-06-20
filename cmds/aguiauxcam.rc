@@ -1,0 +1,3 @@
+service aguiauxcam /system_ext/bin/aguiauxcam
+    class hal
+    oneshot

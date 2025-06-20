@@ -10,3 +10,16 @@ cc_binary {
         "libhidlbase",
     ],
 }
+
+cc_binary {
+    name: "aguiauxcam",
+    system_ext_specific: true,
+    init_rc: ["aguiauxcam.rc"],
+    srcs: [
+        "aguiauxcam.cpp",
+    ],
+    shared_libs: [
+        "vendor.mediatek.hardware.agolddaemon-V1-ndk",
+        "libbinder_ndk",
+    ],
+}

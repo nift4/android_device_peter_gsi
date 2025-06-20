@@ -1,0 +1,8 @@
+type hal_aidl_agolddaemon_default, domain;
+type aguiauxcam_proc, domain;
+type aguiauxcam_proc_exec, exec_type, system_file_type, file_type;
+type hal_aidl_agolddaemon_service, service_manager_type;
+init_daemon_domain(aguiauxcam_proc)
+binder_use(aguiauxcam_proc)
+binder_call(aguiauxcam_proc, hal_aidl_agolddaemon_default);
+allow aguiauxcam_proc hal_aidl_agolddaemon_service:service_manager find;

@@ -1,3 +1,4 @@
 /system/system_ext/bin/init_gsi        u:object_r:init_gsi_exec:s0
 /system/system_ext/quirks(/.*)?        u:object_r:system_file:s0
 /system/bin/hw/android\.hardware\.bluetooth\.audio-service-system u:object_r:hal_audio_sysbta_exec:s0
+/system/system_ext/bin/aguiauxcam      u:object_r:aguiauxcam_proc_exec:s0
