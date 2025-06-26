@@ -8,6 +8,8 @@ persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 persist.dbg.allow_ims_off=1
+# dt2w
+persist.phh.dt2w_enabled=1
 # Enable hw keys by default (unless overridden by user)
 persist.sys.gsi.hw.mainkeys=0
 # Expose all cameras to user apps

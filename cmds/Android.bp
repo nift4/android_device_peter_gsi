@@ -23,3 +23,16 @@ cc_binary {
         "libbinder_ndk",
     ],
 }
+
+cc_binary {
+    name: "aguidt2w",
+    system_ext_specific: true,
+    init_rc: ["aguidt2w.rc"],
+    srcs: [
+        "aguidt2w.cpp",
+    ],
+    shared_libs: [
+        "vendor.mediatek.hardware.agolddaemon-V1-ndk",
+        "libbinder_ndk",
+    ],
+}

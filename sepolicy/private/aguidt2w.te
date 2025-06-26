@@ -1,0 +1,6 @@
+type aguidt2w_proc, domain;
+type aguidt2w_proc_exec, exec_type, system_file_type, file_type;
+init_daemon_domain(aguidt2w_proc)
+binder_use(aguidt2w_proc)
+binder_call(aguidt2w_proc, hal_aidl_agolddaemon_default);
+allow aguidt2w_proc hal_aidl_agolddaemon_service:service_manager find;

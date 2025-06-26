@@ -1,0 +1,4 @@
+on property:persist.phh.dt2w_enabled=1
+    exec u:r:aguidt2w_proc:s0 root -- /system_ext/bin/aguidt2w 1
+on property:persist.phh.dt2w_enabled=0
+    exec u:r:aguidt2w_proc:s0 root -- /system_ext/bin/aguidt2w 0
