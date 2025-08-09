@@ -87,6 +87,8 @@ PRODUCT_PACKAGES += \
     aguidt2w \
     FMRadio
 
+PRODUCT_COPY_FILES += \
+    device/peter/gsi/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-pmic-keys.kl
 # Iwlan (VoWiFi)
 PRODUCT_PACKAGES += \
     Iwlan
