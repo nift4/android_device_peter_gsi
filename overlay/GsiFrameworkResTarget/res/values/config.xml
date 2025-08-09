@@ -68,4 +68,17 @@
     <!-- IWLAN data service package name to bind to by default. If none is specified in an overlay,
          an empty string is passed in -->
     <string name="config_wlan_data_service_package" translatable="false">com.google.android.iwlan</string>
+    <!-- Defines the actions shown in advanced reboot submenu -->
+    <string-array name="config_restartActionsList">
+        <item>restart</item>
+        <item>restart_recovery</item>
+        <item>restart_fastboot</item>
+        <item>restart_bootloader</item>
+    </string-array>
+
+    <integer name="config_deviceLightCapabilities">235</integer>
+
+    <integer name="config_deviceHardwareKeys">72</integer>
+
+    <integer name="config_deviceHardwareWakeKeys">72</integer>
 </resources>

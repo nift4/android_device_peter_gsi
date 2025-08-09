@@ -20,3 +20,7 @@ endif
 
 # GMS build
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
+TARGET_HAS_MTK_SURFACEFLINGER := true
+include vendor/peter/gsi/BoardConfigVendor.mk
+

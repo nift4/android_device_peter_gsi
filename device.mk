@@ -52,6 +52,15 @@ PRODUCT_PACKAGES += \
 # Telecom API (Phone Accounts, etc.)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.telecom.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.telecom.xml
+PRODUCT_BOOT_JARS += \
+    system_ext:mediatek-common \
+    system_ext:mediatek-framework \
+    system_ext:mediatek-ims-base \
+    system_ext:mediatek-ims-common \
+    system_ext:mediatek-telecom-common \
+    system_ext:mediatek-telephony-base \
+    system_ext:mediatek-telephony-common
+
 
 # vendor/foss
 include vendor/foss/foss.mk
@@ -75,9 +84,12 @@ endif
 PRODUCT_PACKAGES += \
     aguiledbeltctl \
     aguiauxcam \
-    aguidt2w
+    aguidt2w \
+    FMRadio
 
 # Iwlan (VoWiFi)
 PRODUCT_PACKAGES += \
     Iwlan
+
+$(call inherit-product, vendor/peter/gsi/gsi-vendor.mk)
 
