@@ -25,7 +25,7 @@ PRODUCT_SOONG_NAMESPACES += device/peter/gsi
 # Reuiqred for system-side HALs like sysbta
 # TODO: Can we work around this?
 SELINUX_IGNORE_NEVERALLOWS := true
-
+TARGET_FACE_UNLOCK_OPTOUT := true
 # Overlay
 PRODUCT_PACKAGES += \
     GsiFrameworkResTarget \
@@ -85,7 +85,9 @@ PRODUCT_PACKAGES += \
     aguiledbeltctl \
     aguiauxcam \
     aguidt2w \
-    FMRadio
+    FMRadio \
+    Aperture \
+    PowerOffAlarm
 
 PRODUCT_COPY_FILES += \
     device/peter/gsi/mtk-pmic-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-pmic-keys.kl
