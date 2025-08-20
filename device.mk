@@ -20,7 +20,7 @@ PRODUCT_INSTALL_DEBUG_POLICY_TO_SYSTEM_EXT :=
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += device/peter/gsi
+PRODUCT_SOONG_NAMESPACES += device/peter/gsi hardware/mediatek
 
 # Reuiqred for system-side HALs like sysbta
 # TODO: Can we work around this?
